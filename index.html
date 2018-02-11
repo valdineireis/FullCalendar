@@ -26,7 +26,13 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#agenda").fullCalendar();
+		$("#agenda").fullCalendar({
+			header: {
+				left: "prev,today,next",
+				center: "title",
+				right: "agendaWeek,agendaDay"
+			}
+		});
 	});
 </script>
 
