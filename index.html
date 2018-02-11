@@ -4,6 +4,13 @@
 	<meta charset="utf-8">
 	<title>Agenda de compromissos</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="fullcalendar/fullcalendar.min.css">
+	<link rel="stylesheet" type="text/css" href="fullcalendar/fullcalendar.print.min.css" media="print">
+
+	<script type="text/javascript" src="fullcalendar/lib/moment.min.js"></script>
+	<script type="text/javascript" src="fullcalendar/lib/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -16,6 +23,14 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#agenda").fullCalendar();
+	});
+</script>
+
+<script type="text/javascript" src="fullcalendar/fullcalendar.min.js"></script>
 
 </body>
 </html>
