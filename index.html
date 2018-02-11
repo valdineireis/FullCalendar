@@ -32,7 +32,36 @@
 				center: "title",
 				right: "agendaWeek,agendaDay"
 			},
-			events: "http://localhost:8000/listar_compromissos.php"
+			events: "http://localhost:8000/listar_compromissos.php",
+			selectable: true,
+			selectHelper: true,
+			select: function(start, end) {
+				var inicio = moment(start).format("YYYY-MM-DD HH:mm");
+				var fim = moment(end).format("YYYY-MM-DD HH:mm");
+
+				var nome = window.prompt("Digite o nome do compromisso:");
+
+				var dados = {
+					nome: nome,
+					inicio: inicio,
+					fim: fim
+				};
+
+				$.post("http://localhost:8000/salvar_compromisso.php", dados, function(response){
+					if (response.status == 'success') {
+						var compromisso = {
+							title: response.title,
+							start: response.start,
+							end: response.end
+						};
+
+						$("#agenda").fullCalendar('renderEvent', compromisso, true);
+					}
+					
+					alert(response.mensagem);
+
+				}, 'json');
+			}
 		});
 	});
 </script>
